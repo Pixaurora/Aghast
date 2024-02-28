@@ -1,25 +1,22 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "net.pixaurora",
+		"id": "aghast",
 		"version": "${version}",
 		"metadata": {
-			"name": "Example Mod",
-			"description": "This is an example description! Tell everyone what your mod is about!",
+			"name": "Aghast",
+			"description": "A small mod to make Ghast fireballs have the proper sound effect.",
 			"contributors": {
-				"Me!": "Owner"
+				"Pixaurora": "Owner"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"sources": "https://github.com/OrnitheMC/ornithe-template-mod"
+				"homepage": "https://github.com/Pixaurora/aghast",
+				"sources": "https://github.com/Pixaurora/aghast"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/aghast/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
-		},
 		"depends": [
 			{
 				"id": "quilt_loader",
@@ -27,15 +24,11 @@
 			},
 			{
 				"id": "minecraft",
-				"versions": "1.2.5"
-			},
-			{
-				"id": "osl-entrypoints",
-				"versions": ">=0.4.0"
+				"versions": "=1.0.0-beta.7.3"
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json",
+	"mixin": "aghast.mixins.json",
 	"minecraft": {
 		"environment": "${game_environment}"
 	}
