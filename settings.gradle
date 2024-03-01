@@ -24,5 +24,6 @@ pluginManagement {
 	}
 }
 
+include ':common'
 include ':client'
 include ':server'

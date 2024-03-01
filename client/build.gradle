@@ -1,4 +1,4 @@
-configure(project)
+configureMod(project)
 
 loom {
 	clientOnlyMinecraftJar()
@@ -6,4 +6,9 @@ loom {
 
 ploceus {
 	clientOnlyMappings()
+}
+
+dependencies {
+	implementation project(':common')
+	include project(':common')
 }
