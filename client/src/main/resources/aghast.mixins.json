@@ -4,6 +4,7 @@
 	"package": "net.pixaurora.aghast.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
+		"WorldRendererMixin"
 	],
 	"client": [
 	],
