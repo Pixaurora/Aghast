@@ -1,9 +1,5 @@
-plugins {
-	id 'java'
-}
-
-repositories {
-	mavenCentral()
-}
-
 configureBasics(project)
+
+loom {
+	serverOnlyMinecraftJar()
+}
