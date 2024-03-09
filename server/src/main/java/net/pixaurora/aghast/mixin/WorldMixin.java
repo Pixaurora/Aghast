@@ -3,6 +3,7 @@ package net.pixaurora.aghast.mixin;
 import java.util.List;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -17,12 +18,14 @@ import net.pixaurora.aghast.network.AghastCooldownPayload;
 
 @Mixin(World.class)
 public class WorldMixin {
-	@SuppressWarnings("unchecked")
-	@Inject( method = "tickEntities", at = @At("HEAD") )
+	@Shadow
+	public List<Entity> entities;
+
+	@Inject( method = "tick", at = @At("HEAD") )
 	public void sendGhastDataToClients(CallbackInfo callbackInfo) {
 		AghastCooldownPayload payload = new AghastCooldownPayload();
 
-		for (Entity entity : (List<Entity>) ((World)(Object) this).globalEntities) {
+		for (Entity entity : this.entities) {
 			if (entity instanceof GhastEntity) {
 				GhastEntity ghast = (GhastEntity) entity;
 
@@ -30,6 +33,6 @@ public class WorldMixin {
 			}
 		}
 
-		ServerPlayNetworking.send(AghastConstants.MOD_ID, payload);
+		ServerPlayNetworking.send(AghastConstants.PACKET_CHANNEL, payload);
 	}
 }

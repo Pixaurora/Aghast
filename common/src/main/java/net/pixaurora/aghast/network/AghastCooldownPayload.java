@@ -30,7 +30,7 @@ public class AghastCooldownPayload implements CustomPayload {
 
 	@Override
 	public void write(DataOutputStream output) throws IOException {
-		output.write(this.cooldowns.size());
+		output.writeInt(this.cooldowns.size());
 
 		for (AghastCooldownInfo cooldown : this.cooldowns) {
 			output.writeInt(cooldown.ghastNetworkingID());
