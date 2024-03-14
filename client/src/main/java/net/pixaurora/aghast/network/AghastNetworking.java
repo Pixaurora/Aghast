@@ -5,11 +5,11 @@ import java.io.IOException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.handler.ClientNetworkHandler;
 import net.minecraft.entity.living.mob.GhastEntity;
-import net.ornithemc.osl.entrypoints.api.client.ClientModInitializer;
+import net.ornithemc.osl.entrypoints.api.ModInitializer;
 import net.ornithemc.osl.networking.api.client.ClientPlayNetworking;
 import net.pixaurora.aghast.AghastConstants;
 
-public class Networking implements ClientModInitializer, ClientPlayNetworking.PayloadListener<AghastCooldownPayload> {
+public class AghastNetworking implements ModInitializer, ClientPlayNetworking.PayloadListener<AghastCooldownPayload> {
 	private void updateGhast(GhastEntity ghast, AghastCooldownInfo info) {
 		ghast.shootingCooldown = info.shootingCooldown();
 		ghast.attackCooldown = info.attackCooldown();
@@ -33,7 +33,7 @@ public class Networking implements ClientModInitializer, ClientPlayNetworking.Pa
 	}
 
 	@Override
-	public void initClient() {
+	public void init() {
 		ClientPlayNetworking.registerListener(AghastConstants.PACKET_CHANNEL, AghastCooldownPayload::new, this);
 	}
 

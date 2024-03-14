@@ -11,11 +11,16 @@ import net.ornithemc.osl.networking.api.server.ServerPlayNetworking;
 import net.pixaurora.aghast.AghastConstants;
 import net.pixaurora.aghast.network.AghastCooldownInfo;
 import net.pixaurora.aghast.network.AghastCooldownPayload;
+import net.pixaurora.aghast.network.AghastNetworking;
 
 @Mixin(World.class)
 public class WorldMixin {
 	@Inject( method = "tick", at = @At("HEAD") )
 	public void sendGhastDataToClients(CallbackInfo callbackInfo) {
+		if (!AghastNetworking.shouldCreatePackets()) {
+			return;
+		}
+
 		AghastCooldownPayload payload = new AghastCooldownPayload();
 
 		World world = (World)(Object) this;

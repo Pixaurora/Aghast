@@ -18,7 +18,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"client-init": "net.pixaurora.aghast.network.Networking"
+			"init": "net.pixaurora.aghast.network.AghastNetworking"
 		},
 		"depends": [
 			{
