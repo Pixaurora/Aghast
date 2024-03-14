@@ -3,3 +3,7 @@ configureBasics(project)
 loom {
 	serverOnlyMinecraftJar()
 }
+
+ploceus {
+	serverOnlyMappings()
+}

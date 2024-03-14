@@ -1,11 +1,9 @@
 package net.pixaurora.aghast.network;
 
 import java.io.IOException;
-import java.util.List;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.handler.ClientNetworkHandler;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.living.mob.GhastEntity;
 import net.ornithemc.osl.entrypoints.api.client.ClientModInitializer;
 import net.ornithemc.osl.networking.api.client.ClientPlayNetworking;
@@ -17,13 +15,16 @@ public class Networking implements ClientModInitializer, ClientPlayNetworking.Pa
 		ghast.attackCooldown = info.attackCooldown();
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public boolean handle(Minecraft client, ClientNetworkHandler handler, AghastCooldownPayload payload) throws IOException {
-		for (Entity entity : (List<Entity>) client.world.entities) {
+		if (client.world == null) {
+			return false;
+		}
+
+		for (GhastEntity ghast : client.world.aghast$ghasts()) {
 			for (AghastCooldownInfo info : payload.cooldowns()) {
-				if (info.ghastNetworkingID() == entity.networkId && entity instanceof GhastEntity) {
-					this.updateGhast((GhastEntity) entity, info);
+				if (info.ghastNetworkingID() == ghast.networkId) {
+					this.updateGhast(ghast, info);
 				}
 			}
 		}

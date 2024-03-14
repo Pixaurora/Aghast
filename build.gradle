@@ -13,6 +13,9 @@ def configureBasics(project) {
 	project.apply plugin: 'org.quiltmc.loom'
 	project.apply plugin: 'ploceus'
 
+	project.version = "${project.rootProject.version}+mc${project.rootProject.minecraft_version}"
+	project.maven_group = project.rootProject.maven_group
+
 	project.sourceSets {
 		main {
 			java {
@@ -52,6 +55,12 @@ def configureBasics(project) {
 		// Uncomment this line to generate them.
 		// withJavadocJar()
 	}
+
+	project.processResources {
+		filesMatching('quilt.mod.json') {
+			expand project.properties
+		}
+	}
 }
 
 def configureMod(project) {
@@ -61,8 +70,6 @@ def configureMod(project) {
 		archivesName = "${project.rootProject.archives_base_name}-${project.environment}"
 	}
 
-	project.version = "${project.rootProject.version}+mc${project.rootProject.minecraft_version}"
-	project.maven_group = project.rootProject.maven_group
 
 	project.repositories {
 		// Add repositories to retrieve artifacts from in here.
@@ -80,11 +87,6 @@ def configureMod(project) {
 		}
 	}
 
-	project.processResources {
-		filesMatching('quilt.mod.json') {
-			expand project.properties
-		}
-	}
 
 	// If you plan to use a different file for the license, don't forget to change the file name here!
 	project.jar {

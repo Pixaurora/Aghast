@@ -1,12 +1,12 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "net.pixaurora.aghast.mixin",
+	"package": "net.pixaurora.aghast.mixin.common",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
+		"WorldMixin"
 	],
 	"client": [
-		"WorldRendererMixin"
 	],
 	"server": [
 	],

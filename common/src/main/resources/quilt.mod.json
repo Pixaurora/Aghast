@@ -2,11 +2,11 @@
 	"schema_version": 1,
 	"quilt_loader": {
 		"group": "net.pixaurora",
-		"id": "aghast",
+		"id": "aghast_common",
 		"version": "${version}",
 		"metadata": {
-			"name": "Aghast",
-			"description": "A small mod to make Ghast fireballs have the proper sound effect.",
+			"name": "Aghast Common Library",
+			"description": "A small library for a small mod.",
 			"contributors": {
 				"Pixaurora": "Owner"
 			},
@@ -17,9 +17,6 @@
 			"icon": "assets/aghast/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
-		"entrypoints": {
-			"client-init": "net.pixaurora.aghast.network.Networking"
-		},
 		"depends": [
 			{
 				"id": "quilt_loader",
@@ -28,10 +25,6 @@
 			{
 				"id": "minecraft",
 				"versions": "=1.0.0-beta.7.3"
-			},
-			{
-				"id": "aghast_common",
-				"versions": "${version}"
 			}
 		]
 	},
@@ -42,8 +35,5 @@
 				"net/pixaurora/aghast/TracksGhasts"
 			]
 		}
-	},
-	"minecraft": {
-		"environment": "${game_environment}"
 	}
 }
