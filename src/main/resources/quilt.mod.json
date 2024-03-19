@@ -6,13 +6,13 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Aghast",
-			"description": "A small mod to make Ghast fireballs have the proper sound effect.",
+			"description": "A Quilt mod meant to fix Ghasts in multiplayer for Beta 1.7.3.",
 			"contributors": {
 				"Pixaurora": "Owner"
 			},
 			"contact": {
-				"homepage": "https://github.com/Pixaurora/aghast",
-				"sources": "https://github.com/Pixaurora/aghast"
+				"homepage": "https://github.com/Pixaurora/Aghast",
+				"sources": "https://github.com/Pixaurora/Aghast"
 			},
 			"icon": "assets/aghast/icon.png"
 		},

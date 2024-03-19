@@ -6,7 +6,7 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Aghast Common Library",
-			"description": "A small library for a small mod.",
+			"description": "Code shared between Server & Client implementations of the mod.",
 			"contributors": {
 				"Pixaurora": "Owner"
 			},
@@ -14,7 +14,7 @@
 				"homepage": "https://github.com/Pixaurora/aghast",
 				"sources": "https://github.com/Pixaurora/aghast"
 			},
-			"icon": "assets/aghast/icon.png"
+			"icon": "assets/aghast_common/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"depends": [
