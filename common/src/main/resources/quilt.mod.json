@@ -14,6 +14,11 @@
 				"homepage": "https://github.com/Pixaurora/aghast",
 				"sources": "https://github.com/Pixaurora/aghast"
 			},
+			"license": {
+				"name": "LGPL-License",
+				"id": "LGPL-3.0-or-later",
+				"url": "https://github.com/Pixaurora/Aghast/blob/spooky/LICENSE"
+			},
 			"icon": "assets/aghast_common/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
