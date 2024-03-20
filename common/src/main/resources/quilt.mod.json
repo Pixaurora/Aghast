@@ -40,5 +40,8 @@
 				"net/pixaurora/aghast/TracksGhasts"
 			]
 		}
+	},
+	"modmenu": {
+		"parent": "aghast"
 	}
 }
