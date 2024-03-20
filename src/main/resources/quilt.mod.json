@@ -37,6 +37,10 @@
 			{
 				"id": "aghast_common",
 				"versions": "${version}"
+			},
+			{
+				"id": "osl",
+				"versions": ">=0.12"
 			}
 		]
 	},
